@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
-  Shield,
+  
   Sword,
   Crown,
   Sun,

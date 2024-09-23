@@ -2,15 +2,15 @@ import { useId } from "react";
 import { cn } from "@/lib/utils";
 
 interface DotPatternProps {
-  width?: number;   // Specify as number
-  height?: number;  // Specify as number
-  x?: number;       // Specify as number
-  y?: number;       // Specify as number
-  cx?: number;      // Specify as number
-  cy?: number;      // Specify as number
-  cr?: number;      // Specify as number
-  className?: string; // Specify as optional string
-  [key: string]: any; // Allows other props, but be cautious with type safety
+  width?: number; // Use number instead of any
+  height?: number; // Use number instead of any
+  x?: number; // Use number instead of any
+  y?: number; // Use number instead of any
+  cx?: number; // Use number instead of any
+  cy?: number; // Use number instead of any
+  cr?: number; // Use number instead of any
+  className?: string;
+  [key: string]: any; // Keep this for any additional props you might pass
 }
 
 export function DotPattern({
@@ -31,7 +31,7 @@ export function DotPattern({
       aria-hidden="true"
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80",
-        className,
+        className
       )}
       {...props}
     >
