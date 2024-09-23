@@ -18,7 +18,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
+import {
+} from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Shield,
@@ -48,40 +49,6 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary">
-      {/* <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-background px-4 md:px-6">
-        <div className="flex items-center space-x-2">
-          <Swords className="h-8 w-8 text-primary" />
-          <span className="text-2xl font-bold text-primary">
-            Gamers Soul Store
-          </span>
-        </div>
-        <nav className="hidden md:flex space-x-4">
-          <a href="#" className="text-foreground hover:text-primary">
-            Home
-          </a>
-          <a href="#" className="text-foreground hover:text-primary">
-            Accounts
-          </a>
-          <a href="#" className="text-foreground hover:text-primary">
-            How It Works
-          </a>
-          <a href="#" className="text-foreground hover:text-primary">
-            Contact
-          </a>
-        </nav>
-        <div className="flex items-center space-x-2">
-          <Button variant="outline" className="hidden md:inline-flex">
-            Sign In
-          </Button>
-          <Button variant="ghost" size="icon" onClick={toggleTheme}>
-            {theme === "light" ? (
-              <Moon className="h-5 w-5" />
-            ) : (
-              <Sun className="h-5 w-5" />
-            )}
-          </Button>
-        </div>
-      </header> */}
       <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-background px-4 md:px-6">
         <div className="flex items-center space-x-2 w-full">
           <Swords className="h-8 w-8 text-primary" />
@@ -156,23 +123,31 @@ export default function Component() {
           </Button>
         </div>
       </header>
-      <main className="container mx-auto px-4 py-8">
-        <section className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Level Up Your Game with Premium Accounts
-          </h1>
-          <p className="text-xl text-foreground mb-8">
-            Find the perfect Clash of Clans account to dominate the battlefield!
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Input className="max-w-lg py-5" placeholder="Search accounts..." />
-            <ShimmerButton className="shadow-2xl">
-              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-200/10 lg:text-lg px-2">
-                Search
-              </span>
-            </ShimmerButton>
-          </div>
-        </section>
+      <main className="container mx-auto px-4 py-2">
+      <section className="h-screen flex flex-col justify-center items-center text-center px-2">
+      <div className="">
+    <div className="pt-10 py-12 md:pt-12"> {/* Adjusted padding to reduce space from navbar */}
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-2"> {/* Reduced margin */}
+        Level Up Your Game with Premium Accounts
+      </h1>
+      <p className="text-lg pt-6 md:text-xl text-foreground mb-2"> {/* Reduced margin */}
+      Trusted Marketplace for Secure Transactions of Clash of Clans Accounts and More Games!
+      </p>
+      <p className="text-md md:text-lg text-foreground mb-4"> {/* Kept margin for spacing below */}
+      Explore & Purchase | Quality Assets | Risk-Free Transactions
+      </p>
+    </div>
+    </div>
+    <div className="flex flex-col md:flex-row justify-center pt-8 space-y-4 md:space-y-0 md:space-x-4 w-full max-w-lg">
+      <Input className="w-full md:w-3/4 py-4 md:py-5" placeholder="Search accounts..." />
+      <ShimmerButton className="shadow-2xl w-full md:w-auto">
+        <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg px-1 py-0">
+          Search
+        </span>
+      </ShimmerButton>
+    </div>
+  </section>
+
 
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {accounts.map((account, index) => (
