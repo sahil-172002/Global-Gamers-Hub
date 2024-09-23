@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Neeraj's Haven",
+      "description": "Town Hall 11 | Level 150",
+      "troops": "Max Troops",
+      "trophies": "5000+ Trophies",
+      "image": "/placeholder.svg?height=200&width=400",
+      "price": "$99.99"
+    },
+    {
+      "title": "Gem Master",
+      "description": "Town Hall 13 | Level 200",
+      "troops": "10000+ Gems",
+      "trophies": "7000+ Trophies",
+      "image": "/placeholder.svg?height=200&width=400",
+      "price": "$199.99"
+    },
+    {
+      "title": "Newbie's Dream",
+      "description": "Town Hall 9 | Level 100",
+      "troops": "Balanced Army",
+      "trophies": "3000+ Trophies",
+      "image": "/placeholder.svg?height=200&width=400",
+      "price": "$49.99"
+    }
+  ]
+  
