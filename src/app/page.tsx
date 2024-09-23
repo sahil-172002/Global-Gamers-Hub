@@ -1,6 +1,6 @@
 import Component from "@/components/game-market";
-import Image from "next/image";
-import DotPattern from "@/components/magicui/dot-pattern";
+
+
 
 export default function Home() {
   return (

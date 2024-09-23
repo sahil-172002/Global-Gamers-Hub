@@ -18,27 +18,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Shield,
   Sword,
   Crown,
-  Gem,
   Sun,
   Moon,
   Swords,
-  Package2,
   Menu,
-  Search,
-  CircleUser,
 } from "lucide-react";
 import ShimmerButton from "./magicui/shimmer-button";
 import accounts from "@/data/accounts.json";
