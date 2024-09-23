@@ -4,7 +4,7 @@
     "description": "Town Hall 11 | Level 150",
     "troops": "Max Troops",
     "trophies": "5000+ Trophies",
-    "image": "svg1.jpg",
+    "image": "/svg1.jpg",
     "price": "$99.99"
   },
   {
@@ -12,7 +12,7 @@
     "description": "Town Hall 13 | Level 200",
     "troops": "10000+ Gems",
     "trophies": "7000+ Trophies",
-    "image": "svg1.jpg",
+    "image": "/svg1.jpg",
     "price": "$199.99"
   },
   {
@@ -20,7 +20,7 @@
     "description": "Town Hall 9 | Level 100",
     "troops": "Balanced Army",
     "trophies": "3000+ Trophies",
-    "image": "svg1.jpg",
+    "image": "/svg1.jpg",
     "price": "$49.99"
   }
 ]

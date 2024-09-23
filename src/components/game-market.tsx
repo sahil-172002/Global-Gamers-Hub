@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image';
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -182,36 +182,42 @@ export default function Component() {
       ))}
     </section>
 
-        <section className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-4">
-            Why Choose Us?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-4">
-              <Shield className="h-12 w-12 text-primary mx-auto mb-2" />
-              <h3 className="text-xl font-semibold mb-2">
-                Secure Transactions
-              </h3>
-              <p className="text-foreground">
-                Your payment and personal information are always protected.
-              </p>
-            </div>
-            <div className="p-4">
-              <Sword className="h-12 w-12 text-orange-500 mx-auto mb-2" />
-              <h3 className="text-xl font-semibold mb-2">Verified Accounts</h3>
-              <p className="text-foreground">
-                All accounts are thoroughly checked for authenticity.
-              </p>
-            </div>
-            <div className="p-4">
-              <Crown className="h-12 w-12 text-yellow-500 mx-auto mb-2" />
-              <h3 className="text-xl font-semibold mb-2">Premium Selection</h3>
-              <p className="text-foreground">
-                Choose from a wide range of high-quality accounts.
-              </p>
-            </div>
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+  {accounts.map((account, index) => (
+    <Card key={index}>
+      <CardHeader>
+        <CardTitle>{account.title}</CardTitle>
+        <CardDescription>{account.description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-center space-x-2">
+            <Sword className="h-5 w-5 text-orange-500" />
+            <span>{account.troops}</span>
           </div>
-        </section>
+          <div className="flex items-center space-x-2">
+            <Crown className="h-5 w-5 text-yellow-500" />
+            <span>{account.trophies}</span>
+          </div>
+        </div>
+        <Image
+          src={account.image} // Make sure this is the correct path
+          alt={`${account.title} Preview`}
+          className="w-full h-48 object-cover rounded-md"
+          width={400} // Specify width
+          height={200} // Specify height
+        />
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <span className="text-2xl font-bold text-green-600 dark:text-green-400">
+          {account.price}
+        </span>
+        <Button>Buy Now</Button>
+      </CardFooter>
+    </Card>
+  ))}
+</section>
+
 
         <section className="bg-card rounded-lg shadow-lg p-6 mb-12">
           <h2 className="text-3xl font-bold text-primary mb-4 text-center">
