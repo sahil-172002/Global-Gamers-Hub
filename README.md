@@ -1,4 +1,4 @@
-# 🎮 Gaming Marketplace: Buy, Sell & Trade Clash of Clans Accounts and More! 
+# 🎮 Gaming Marketplace: Accounts and More! 
 
 A trusted platform where gamers can buy, sell, and trade their favorite Clash of Clans accounts, clans, boosting services, and other gaming assets securely. Featuring easy-to-use tools for users and an admin dashboard for seamless asset management.
 
