@@ -1,5 +1,5 @@
 "use client";
-import Image from 'next/image';
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,18 +18,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-} from "@/components/ui/dropdown-menu";
+import {} from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  
-  Sword,
-  Crown,
-  Sun,
-  Moon,
-  Swords,
-  Menu,
-} from "lucide-react";
+import { Sword, Crown, Sun, Moon, Swords, Menu } from "lucide-react";
 import ShimmerButton from "./magicui/shimmer-button";
 import accounts from "@/data/accounts.json";
 import Link from "next/link";
@@ -124,100 +115,113 @@ export default function Component() {
         </div>
       </header>
       <main className="container mx-auto px-4 py-2">
-      <section className="h-screen flex flex-col justify-center items-center text-center px-2">
-      <div className="py-0">
-    <div className="pt-10 py-12 md:pt-12"> {/* Adjusted padding to reduce space from navbar */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-2"> {/* Reduced margin */}
-        Level Up Your Game with Premium Accounts
-      </h1>
-      <p className="text-lg pt-6 md:text-xl text-foreground mb-2"> {/* Reduced margin */}
-      Trusted Marketplace for Secure Transactions of Clash of Clans Accounts and More Games!
-      </p>
-      <p className="text-md md:text-lg text-foreground mb-4"> {/* Kept margin for spacing below */}
-      Explore & Purchase | Quality Assets | Risk-Free Transactions
-      </p>
-    </div>
-    </div>
-    <div className="flex flex-col md:flex-row justify-center pt-8 space-y-4 md:space-y-0 md:space-x-4 w-full max-w-lg">
-      <Input className="w-full md:w-3/4 py-4 md:py-5" placeholder="Search accounts..." />
-      <ShimmerButton className="shadow-2xl w-full md:w-auto">
-        <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg px-1 py-0">
-          Search
-        </span>
-      </ShimmerButton>
-    </div>
-  </section>
-
-  <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-      {accounts.map((account, index) => (
-        <Card key={index}>
-          <CardHeader>
-            <CardTitle>{account.title}</CardTitle>
-            <CardDescription>{account.description}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center space-x-2">
-                <Sword className="h-5 w-5 text-orange-500" />
-                <span>{account.troops}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Crown className="h-5 w-5 text-yellow-500" />
-                <span>{account.trophies}</span>
-              </div>
+        <section className="h-screen flex flex-col justify-center items-center text-center px-2">
+          <div className="py-0">
+            <div className="pt-10 py-12 md:pt-12">
+              {" "}
+              {/* Adjusted padding to reduce space from navbar */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-2">
+                {" "}
+                {/* Reduced margin */}
+                Level Up Your Game with Premium Accounts
+              </h1>
+              <p className="text-lg pt-6 md:text-xl text-foreground mb-2">
+                {" "}
+                {/* Reduced margin */}
+                Trusted Marketplace for Secure Transactions of Clash of Clans
+                Accounts and More Games!
+              </p>
+              <p className="text-md md:text-lg text-foreground mb-4">
+                {" "}
+                {/* Kept margin for spacing below */}
+                Explore & Purchase | Quality Assets | Risk-Free Transactions
+              </p>
             </div>
-            <img
-              src={account.image}
-              alt="Account Preview"
-              className="w-full h-48 object-cover rounded-md"
+          </div>
+          <div className="flex flex-col md:flex-row justify-center pt-8 space-y-4 md:space-y-0 md:space-x-4 w-full max-w-lg">
+            <Input
+              className="w-full md:w-3/4 py-4 md:py-5"
+              placeholder="Search accounts..."
             />
-          </CardContent>
-          <CardFooter className="flex justify-between">
-            <span className="text-2xl font-bold text-green-600 dark:text-green-400">
-              {account.price}
-            </span>
-            <Button>Buy Now</Button>
-          </CardFooter>
-        </Card>
-      ))}
-    </section>
-
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-  {accounts.map((account, index) => (
-    <Card key={index}>
-      <CardHeader>
-        <CardTitle>{account.title}</CardTitle>
-        <CardDescription>{account.description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex justify-between items-center mb-4">
-          <div className="flex items-center space-x-2">
-            <Sword className="h-5 w-5 text-orange-500" />
-            <span>{account.troops}</span>
+            <ShimmerButton className="shadow-2xl w-full md:w-auto">
+              <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg px-1 py-0">
+                Search
+              </span>
+            </ShimmerButton>
           </div>
-          <div className="flex items-center space-x-2">
-            <Crown className="h-5 w-5 text-yellow-500" />
-            <span>{account.trophies}</span>
-          </div>
-        </div>
-        <Image
-          src={account.image} // Make sure this is the correct path
-          alt={`${account.title} Preview`}
-          className="w-full h-48 object-cover rounded-md"
-          width={400} // Specify width
-          height={200} // Specify height
-        />
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <span className="text-2xl font-bold text-green-600 dark:text-green-400">
-          {account.price}
-        </span>
-        <Button>Buy Now</Button>
-      </CardFooter>
-    </Card>
-  ))}
-</section>
+        </section>
 
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {accounts.map((account, index) => (
+            <Card key={index}>
+              <CardHeader>
+                <CardTitle>{account.title}</CardTitle>
+                <CardDescription>{account.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex justify-between items-center mb-4">
+                  <div className="flex items-center space-x-2">
+                    <Sword className="h-5 w-5 text-orange-500" />
+                    <span>{account.troops}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Crown className="h-5 w-5 text-yellow-500" />
+                    <span>{account.trophies}</span>
+                  </div>
+                </div>
+                <Image
+                  src={account.image}
+                  alt="Account Preview"
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover rounded-md"
+                />
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <span className="text-2xl font-bold text-green-600 dark:text-green-400">
+                  {account.price}
+                </span>
+                <Button>Buy Now</Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </section>
+
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {accounts.map((account, index) => (
+            <Card key={index}>
+              <CardHeader>
+                <CardTitle>{account.title}</CardTitle>
+                <CardDescription>{account.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex justify-between items-center mb-4">
+                  <div className="flex items-center space-x-2">
+                    <Sword className="h-5 w-5 text-orange-500" />
+                    <span>{account.troops}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Crown className="h-5 w-5 text-yellow-500" />
+                    <span>{account.trophies}</span>
+                  </div>
+                </div>
+                <Image
+                  src={account.image} // Make sure this is the correct path
+                  alt={`${account.title} Preview`}
+                  className="w-full h-48 object-cover rounded-md"
+                  width={400} // Specify width
+                  height={200} // Specify height
+                />
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <span className="text-2xl font-bold text-green-600 dark:text-green-400">
+                  {account.price}
+                </span>
+                <Button>Buy Now</Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </section>
 
         <section className="bg-card rounded-lg shadow-lg p-6 mb-12">
           <h2 className="text-3xl font-bold text-primary mb-4 text-center">
