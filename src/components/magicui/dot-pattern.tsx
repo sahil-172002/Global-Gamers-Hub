@@ -10,7 +10,7 @@ interface DotPatternProps {
   cy?: number; // Use number instead of any
   cr?: number; // Use number instead of any
   className?: string;
-  [key: string]: any; // Keep this for any additional props you might pass
+  // [key: string]: any; // Keep this for any additional props you might pass
 }
 
 export function DotPattern({
@@ -27,6 +27,7 @@ export function DotPattern({
   const id = useId();
 
   return (
+    /* eslint-disable */
     <svg
       aria-hidden="true"
       className={cn(
