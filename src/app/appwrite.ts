@@ -1,4 +1,3 @@
-require('dotenv').config();
 import { Client, Account, Databases } from 'appwrite';
 
 export const client = new Client()

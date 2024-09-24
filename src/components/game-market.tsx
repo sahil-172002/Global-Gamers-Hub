@@ -22,7 +22,6 @@ import {} from "@/components/ui/dropdown-menu";
 
 import { Sword, Crown } from "lucide-react";
 import ShimmerButton from "./magicui/shimmer-button";
-import { getData } from "@/data/getData";
 import { databases } from "@/app/appwrite";
 import { Query } from "appwrite";
 import { Account } from "@/types/types";
@@ -79,12 +78,7 @@ export default function Component() {
               className="w-full md:w-3/4 py-6 md:py-5"
               placeholder="Search accounts..."
             />
-            <ShimmerButton
-              className="shadow-2xl w-full md:w-auto"
-              onClick={() => {
-                getData();
-              }}
-            >
+            <ShimmerButton className="shadow-2xl w-full md:w-auto">
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white lg:text-lg px-1 py-2 md:py-0">
                 Search
               </span>
