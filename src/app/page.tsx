@@ -1,4 +1,3 @@
-import AccountList from "@/components/AccountList";
 import Home from "@/components/Home";
 
 export default function Page() {
@@ -11,7 +10,6 @@ export default function Page() {
       {/* <div className="relative min-h-screen bg-gradient-to-b from-background to-secondary z-20"> */}
       {/* <DotPattern className="absolute inset-0 z-10" /> */}
       <Home />
-      <AccountList />
       {/* </div> */}
     </>
   );

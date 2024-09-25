@@ -1,8 +1,6 @@
 "use client";
 import BlurIn from "@/components/magicui/blur-in";
-
 import { Input } from "@/components/ui/input";
-
 import ShimmerButton from "./magicui/shimmer-button";
 import { FadeText } from "./magicui/fade-text";
 
@@ -25,11 +23,6 @@ export default function Home() {
             Accounts and More Games."
             />
           </div>
-
-          {/* <FadeText
-            className="text-md md:text-lg text-foreground mb-4"
-            text="Explore & Purchase | Quality Assets | Risk-Free Transactions"
-          /> */}
           <div className="flex flex-col md:flex-row justify-center items-center pt-8 gap-4 md:gap-2  w-full max-w-lg">
             <Input
               className="w-full md:w-3/4 py-6 md:py-5  dark:text-black border-black bg-white rounded-3xl md:rounded-sm"
@@ -42,33 +35,6 @@ export default function Home() {
             </ShimmerButton>
           </div>
         </section>
-
-        {/* <section className="flex justify-center items-center flex-wrap gap-2 mb-12">
-          {[...accounts, ...accounts, ...accounts].map((account, index) => (
-            <AccountCard account={account} key={index} />
-          ))}
-        </section>
-        <section className="bg-card rounded-lg shadow-lg p-6 mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-4 text-center">
-            Ready to Level Up?
-          </h2>
-          <p className="text-center text-foreground mb-6">
-            Join thousands of satisfied gamers who have boosted their gameplay!
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Select>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select game" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="clash-of-clans">Clash of Clans</SelectItem>
-                <SelectItem value="other-game-1">Other Game 1</SelectItem>
-                <SelectItem value="other-game-2">Other Game 2</SelectItem>
-              </SelectContent>
-            </Select>
-            <Button>Find Accounts</Button>
-          </div>
-        </section> */}
       </main>
     </div>
   );

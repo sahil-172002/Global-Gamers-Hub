@@ -8,22 +8,22 @@ import { ModeToggle } from "./ui/mode-toggle";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white dark:bg-[#000205]  px-4 md:px-6">
-      <div className="flex items-center space-x-2 w-full">
+    <header className=" z-10 sticky top-0 flex h-16 items-center justify-between gap-4 border-b bg-white dark:bg-[#000205]  px-4 md:px-6">
+      <Link href={"/"} className="flex items-center space-x-2 w-full">
         <Swords className="h-8 w-8 text-primary" />
         <span className="text-xl sm:text-2xl font-bold text-primary">
           Gamers Soul Store
         </span>
-      </div>
+      </Link>
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
-          href="#"
+          href="/"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
           Home
         </Link>
         <Link
-          href="#"
+          href="/games"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
           Games
@@ -55,19 +55,19 @@ const Header = () => {
           <SheetContent side="right">
             <nav className="grid gap-6 text-lg font-medium">
               <Link
-                href="#"
+                href="/"
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
                 Home
               </Link>
               <Link
-                href="#"
+                href="/games"
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
                 Games
               </Link>
               <Link
-                href="#"
+                href="/games"
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
                 Contact
