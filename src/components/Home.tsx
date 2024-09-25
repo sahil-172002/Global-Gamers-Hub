@@ -8,7 +8,7 @@ import { FadeText } from "./magicui/fade-text";
 
 export default function Home() {
   return (
-    <div className="min-h-screen dark:bg-background bg-white  dark:bg-grid-white/[0.05] bg-grid-black/[0.2] relative">
+    <div className="min-h-screen dark:bg-background bg-white  dark:bg-grid-white/[0.05] bg-grid-black/[0.06] relative">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)]"></div>
       <main className="container mx-auto px-4 py-2">
         <section className="h-[90vh] flex flex-col justify-center items-center text-center px-2 gap-12">
