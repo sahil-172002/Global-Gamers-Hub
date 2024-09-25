@@ -1,4 +1,4 @@
-# 🚀 Gaming Marketplace: Buy and Sale your Gaming Accounts
+# 🚀 Gamers Soul Gaming Store
 **A trusted platform where gamers can buy, sell, and trade their favorite Clash of Clans accounts, clans and other gaming assets securely.**
 
 ---
