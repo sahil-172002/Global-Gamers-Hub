@@ -41,7 +41,7 @@ const AccountCard = ({ account }: Props) => {
     //     <Button>Buy Now</Button>
     //   </CardFooter>
     // </Card>
-    <Card className="w-full max-w-md mx-auto py-6">
+    <Card className="w-full max-w-sm mx-auto py-6">
       <CardHeader>
         {/* <CardTitle className="text-xl font-bold ">
           Clash of Clans Account
@@ -54,7 +54,7 @@ const AccountCard = ({ account }: Props) => {
             <Image
               width={400}
               height={200}
-              src={"/test-image.png"}
+              src={"/test-image1.png"}
               alt="Account Preview"
               className="w-full h-48 object-cover rounded-md"
             />
@@ -74,27 +74,28 @@ const AccountCard = ({ account }: Props) => {
           <div className="space-y-2">
             <h3 className="text-md font-semibold mb-2">Heroes</h3>
             <div className="grid grid-cols-2 gap-y-2">
-              <div className="flex items-center space-x-2">
-                <Sword className="h-4 w-4 text-red-500" />
-                <span className="text-sm">Barbarian King:</span>
-                <Badge>{account.barbarian_king}</Badge>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Zap className="h-4 w-4 text-purple-500" />
-                <span className="text-sm">Grand Warden:</span>
-                <Badge>{account.grand_warden}</Badge>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Crown className="h-4 w-4 text-pink-500" />
-                <span className="text-sm">Archer Queen:</span>
-                <Badge>{account.archer_queen}</Badge>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Shield className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Royal Champion:</span>
-                <Badge>{account.royal_champion}</Badge>
-              </div>
-            </div>
+  <div className="flex items-center space-x-2 flex-nowrap">
+    <Sword className="h-4 w-4 text-red-500" />
+    <span className="text-sm whitespace-nowrap">Barbarian King:</span>
+    <Badge>{account.barbarian_king}</Badge>
+  </div>
+  <div className="flex items-center space-x-2 flex-nowrap">
+    <Zap className="h-4 w-4 text-purple-500" />
+    <span className="text-sm whitespace-nowrap">Grand Warden:</span>
+    <Badge>{account.grand_warden}</Badge>
+  </div>
+  <div className="flex items-center space-x-2 flex-nowrap">
+    <Crown className="h-4 w-4 text-pink-500" />
+    <span className="text-sm whitespace-nowrap">Archer Queen:</span>
+    <Badge>{account.archer_queen}</Badge>
+  </div>
+  <div className="flex items-center space-x-2 flex-nowrap">
+    <Shield className="h-4 w-4 text-green-500" />
+    <span className="text-sm whitespace-nowrap">Royal Champion:</span>
+    <Badge>{account.royal_champion}</Badge>
+  </div>
+</div>
+
           </div>
           <div className="mt-4 flex items-center justify-center space-x-2">
             <Star className="h-5 w-5 text-yellow-400" />

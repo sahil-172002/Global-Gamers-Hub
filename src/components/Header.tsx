@@ -64,7 +64,7 @@ const Header = () => {
                 href="#"
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
-                Accounts
+                Games
               </Link>
               <Link
                 href="#"

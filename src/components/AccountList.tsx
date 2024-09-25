@@ -27,7 +27,7 @@ const AccountList = () => {
   };
   return (
     <div className="my-12 mx-4">
-      <h1 className="text-4xl text-center my-8">Premium Accounts</h1>
+      <h1 className="text-4xl text-center my-8">Featured Accounts</h1>
       <section className="flex justify-center items-center flex-wrap gap-4 my-4 ">
         {[...accounts, ...accounts, ...accounts].map((account, index) => (
           <AccountCard account={account} key={index} />
