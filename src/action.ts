@@ -7,7 +7,7 @@ if (!API_KEY) {
 }
 try {
     const response = await fetch(
-      `https://api.clashofclans.com/v1/players/%23${tag}`,
+      `https://cocproxy.royaleapi.dev/v1/players/%23${tag}`,
       {
         headers: {
           Authorization: `Bearer ${API_KEY}`,
