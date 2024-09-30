@@ -7,7 +7,7 @@
 ![image](https://github.com/user-attachments/assets/ecf02d1d-ebac-4ab7-9943-73e0a07dc237)
 
 
-## 🚀 Features
+## 🚀 The Features
 
 - **Buy & Sell**: Securely purchase and trade Clash of Clans accounts, clans, and boosting services.
 - **Trusted Listings**: Verified assets for all major gaming accounts.
