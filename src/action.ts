@@ -1,5 +1,8 @@
+"use server"
+import { databases } from "./app/appwrite"
 
 export const getData =async (tag: string) => {
+  console.log("tag", tag);
     const API_KEY = process.env.CLASH_OF_CLANS_API_KEY
 
 if (!API_KEY) {
@@ -27,3 +30,7 @@ try {
     return { error: 'Failed to fetch player data' }
   }
 }
+
+
+
+
