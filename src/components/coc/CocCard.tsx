@@ -1,11 +1,23 @@
-import React from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { getData } from "@/action";
 import { Button } from "../ui/button";
 import { ShoppingBag } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const CocCard = async () => {
-  const data = await getData("P09L8LVU9");
+const CocCard = async ({
+  tag,
+  imageUrls,
+}: {
+  tag: string;
+  imageUrls: string[];
+}) => {
+  const data = await getData(tag);
   return (
     <div className="max-w-sm p-4">
       <Card>
@@ -20,13 +32,23 @@ const CocCard = async () => {
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div>
-            <img
-              src={`/test-image1.png`}
-              className="drop-shadow-xl rounded-lg shadow-md z-10"
-              alt="trophies"
-            />
-          </div>
+          <Carousel className="w-full max-w-xs">
+            <CarouselContent>
+              {imageUrls.map((imageUrl, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <img
+                      src={imageUrl}
+                      className="drop-shadow-xl rounded-lg shadow-md z-10 aspect-video object-contain  max-w-72 h-44"
+                      alt="trophies"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
           <div className="flex flex-col justify-around gap-4">
             <div className="flex gap-2 items-center">
               <img

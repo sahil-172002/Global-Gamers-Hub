@@ -3,6 +3,7 @@ import BlurIn from "@/components/magicui/blur-in";
 import { Input } from "@/components/ui/input";
 import ShimmerButton from "./magicui/shimmer-button";
 import { FadeText } from "./magicui/fade-text";
+import { MarqueeDemo } from "@/components/Reviews";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
             </ShimmerButton>
           </div>
         </section>
+        <MarqueeDemo />
       </main>
     </div>
   );
