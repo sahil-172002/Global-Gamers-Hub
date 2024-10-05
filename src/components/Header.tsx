@@ -12,7 +12,7 @@ const Header = () => {
       <Link href={"/"} className="flex items-center space-x-2 w-full">
         <Swords className="h-8 w-8 text-primary" />
         <span className="text-xl sm:text-2xl font-bold text-primary">
-          Gamers Soul Hub
+          Global Gamers Hub
         </span>
       </Link>
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
