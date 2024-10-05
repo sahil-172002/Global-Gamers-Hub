@@ -17,9 +17,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Gamers Soul Store",
+  title: "Global Gamers Hub",
   description:
-    "Gamers Soul Store is a premium game accounts store for all games.",
+    "Global Gamers Hub is a premium game accounts store for all games.",
 };
 
 export default function RootLayout({
