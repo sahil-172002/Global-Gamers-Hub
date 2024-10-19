@@ -1,5 +1,5 @@
 "use server";
-export const getAccountDetail = async (tag: string) => {
+export const getData = async (tag: string) => {
   console.log("tag", tag);
   const API_KEY = process.env.CLASH_OF_CLANS_API_KEY;
 
@@ -8,6 +8,7 @@ export const getAccountDetail = async (tag: string) => {
       "CLASH_OF_CLANS_API_KEY is not set in environment variables"
     );
   }
+
   try {
     const response = await fetch(
       `https://cocproxy.royaleapi.dev/v1/players/%23${tag}`,
@@ -19,10 +20,12 @@ export const getAccountDetail = async (tag: string) => {
       }
     );
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    // Check for 404 response before parsing JSON
+    if (response.status === 404) {
+      return { error: "Invalid tag" };
     }
 
+    // Assuming response is OK, parse JSON
     const data = await response.json();
     return data;
   } catch (error) {
