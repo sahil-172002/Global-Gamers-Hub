@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="mb-4 md:mb-0 text-center">
           <div className="flex justify-center gap-2">
             <Swords className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold">Global Gamers Hub</span>
+            <span className="text-2xl font-bold">Gamer Soul Store</span>
           </div>
           <p className="text-sm mt-4">
             Your trusted source for premium game accounts.

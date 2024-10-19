@@ -32,7 +32,7 @@ const page = () => {
               <Badge>Mobile</Badge>
               <Badge>Free-to-Play</Badge>
             </div>
-            <Link href={"/games/coc"}>
+            <Link href={"/coc"}>
               <Button size="lg">Browse All Accounts</Button>
             </Link>
           </div>

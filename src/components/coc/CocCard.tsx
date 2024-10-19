@@ -1,5 +1,5 @@
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import { getData } from "@/action";
+import { getData } from "@/actions/coc/getAccountDetail";
 import { Button } from "../ui/button";
 import { ShoppingBag } from "lucide-react";
 import {
@@ -15,7 +15,7 @@ const CocCard = async ({
   imageUrls,
 }: {
   tag: string;
-  imageUrls: string[];
+  imageUrls?: string[];
 }) => {
   const data = await getData(tag);
   return (
@@ -32,23 +32,29 @@ const CocCard = async ({
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Carousel className="w-full max-w-xs">
-            <CarouselContent>
-              {imageUrls.map((imageUrl, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <img
-                      src={imageUrl}
-                      className="drop-shadow-xl rounded-lg shadow-md z-10 aspect-video object-contain  max-w-72 h-44"
-                      alt="trophies"
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          {imageUrls ? (
+            <Carousel className="w-full max-w-xs">
+              <CarouselContent>
+                {imageUrls?.map((imageUrl, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <img
+                        src={imageUrl}
+                        className="drop-shadow-xl rounded-lg shadow-md z-10 aspect-video object-contain  max-w-72 h-44"
+                        alt="trophies"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          ) : (
+            <div className="flex flex-col items-center justify-center">
+              <p className="text-center">No images available</p>
+            </div>
+          )}
           <div className="flex flex-col justify-around gap-4">
             <div className="flex gap-2 items-center">
               <img
