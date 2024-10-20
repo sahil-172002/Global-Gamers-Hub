@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useState, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -20,12 +19,10 @@ import { Loader2 } from "lucide-react";
 import createUser from "@/actions/createUser";
 import { toast } from "sonner";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
+function SubmitButton({ isPending }: { isPending: boolean }) {
   return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? (
+    <Button type="submit" className="w-full" disabled={isPending}>
+      {isPending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           Registering...
@@ -38,18 +35,26 @@ function SubmitButton() {
 }
 
 export default function RegisterPage() {
-  const [state, formAction] = useFormState(createUser, {
-    error: null,
-    success: false,
-  });
+  const [error, setError] = useState<string | null>(null);
+  const [isPending, setIsPending] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    if (state.success) {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsPending(true);
+    setError(null);
+
+    const formData = new FormData(event.currentTarget);
+    const result = await createUser(formData);
+
+    if (result.error) {
+      setError(result.error);
+      setIsPending(false);
+    } else if (result.success) {
       toast.success("Registration successful!");
       router.push("/login");
     }
-  }, [state, router]);
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -62,11 +67,11 @@ export default function RegisterPage() {
             Create a new account to get started
           </CardDescription>
         </CardHeader>
-        <form action={formAction}>
+        <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
-            {state.error && (
+            {error && (
               <Alert variant="destructive">
-                <AlertDescription>{state.error}</AlertDescription>
+                <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
             <div className="space-y-2">
@@ -115,7 +120,7 @@ export default function RegisterPage() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <SubmitButton />
+            <SubmitButton isPending={isPending} />
             <p className="text-sm text-center text-gray-600">
               Already have an account?{" "}
               <Link href="/login" className="text-primary hover:underline">
