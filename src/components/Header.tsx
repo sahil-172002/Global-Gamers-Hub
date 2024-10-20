@@ -46,7 +46,7 @@ const Header = () => {
         <Link href="/" className="flex items-center space-x-2">
           <Swords className="h-6 w-6" />
           <span className="font-bold hidden sm:inline-block">
-            Gamers Soul Store
+            Global Gamers Hub
           </span>
         </Link>
         <div className="flex items-center space-x-4">
