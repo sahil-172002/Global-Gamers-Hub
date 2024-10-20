@@ -3,7 +3,7 @@ import { createAdminClient } from "@/config/appwrite";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
-async function createSession(previousState: any, formData: FormData) {
+async function createSession(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
 

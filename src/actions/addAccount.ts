@@ -5,7 +5,7 @@ import { ID } from "node-appwrite";
 import { revalidatePath } from "next/cache";
 import { getAccountDetail } from "@/action";
 
-async function addAccount(previousState: any, formData: FormData) {
+async function addAccount(formData: FormData) {
   // Get databases instance
   const { databases } = await createAdminClient();
 
@@ -27,12 +27,17 @@ async function addAccount(previousState: any, formData: FormData) {
     }
 
     // Create account
+
+    const accountId = formData.get("accountId") as string;
+    const imageIds = JSON.parse(formData.get("imageIds") as string);
+
     const newAccount = await databases.createDocument(
       process.env.NEXT_PUBLIC_APPWRITE_DATABASE as string,
       process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ACCOUNTS as string,
       ID.unique(),
       {
-        accountId: formData.get("accountId"),
+        accountId: accountId,
+        images: imageIds,
       }
     );
 

@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useState, useEffect, FormEvent } from "react";
 import { useAuth } from "@/context/authContext";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,12 +19,10 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2 } from "lucide-react";
 import createSession from "@/actions/createSession";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
+function SubmitButton({ isPending }: { isPending: boolean }) {
   return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? (
+    <Button type="submit" className="w-full" disabled={isPending}>
+      {isPending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           Logging in...
@@ -38,19 +35,27 @@ function SubmitButton() {
 }
 
 export default function LoginPage() {
-  const [state, formAction] = useFormState(createSession, {
-    error: null,
-    success: false,
-  });
+  const [error, setError] = useState<string | null>(null);
+  const [isPending, setIsPending] = useState(false);
   const { setIsAuthenticated } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    if (state.success) {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsPending(true);
+    setError(null);
+
+    const formData = new FormData(event.currentTarget);
+    const result = await createSession(formData);
+
+    if (result.error) {
+      setError(result.error);
+      setIsPending(false);
+    } else if (result.success) {
       setIsAuthenticated(true);
       window.location.href = "/";
     }
-  }, [state, setIsAuthenticated, router]);
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -63,11 +68,11 @@ export default function LoginPage() {
             Enter your credentials to access your account
           </CardDescription>
         </CardHeader>
-        <form action={formAction}>
+        <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
-            {state.error && (
+            {error && (
               <Alert variant="destructive">
-                <AlertDescription>{state.error}</AlertDescription>
+                <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
             <div className="space-y-2">
@@ -94,7 +99,7 @@ export default function LoginPage() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <SubmitButton />
+            <SubmitButton isPending={isPending} />
             <p className="text-sm text-center text-gray-600">
               No account?{" "}
               <Link href="/register" className="text-primary hover:underline">

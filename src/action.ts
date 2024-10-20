@@ -1,6 +1,5 @@
 "use server";
 export const getAccountDetail = async (tag: string) => {
-  console.log("tag", tag);
   const API_KEY = process.env.CLASH_OF_CLANS_API_KEY;
 
   if (!API_KEY) {
